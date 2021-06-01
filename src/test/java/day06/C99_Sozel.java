@@ -6,7 +6,7 @@ public class C99_Sozel {
         - Maven bir java derleme aracidir(build tool). Maven proje otomaston ve yonetim aracidir.
         - Maven ile tum otomaston surecini yonetmek icin maven projesi olusturabilirisiniz.
         - Maven konfigrasyon icin pom.xml dosyasini kullanir.
-        Bu dosya projeyi build etmek icin gerekli butun builgileri icerir.(dependencies)
+        Bu dosya projeyi build etmek icin gerekli butun bilgileri icerir.(dependencies)
         - Maven, java uygulamalarini derlememize(compile), calistirmamiza(run) ve dagitmamiza(deploy) yardimci olur.
         - Ant ve Gradle gibi baska araclar da vardir.
 
