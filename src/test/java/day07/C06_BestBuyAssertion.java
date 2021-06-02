@@ -5,7 +5,9 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
@@ -50,9 +52,26 @@ public class C06_BestBuyAssertion {
         // b. titleTest => Sayfa başlığının “Rest” içermediğini(contains) test edin
         String unexpectedWordRest = "Rest";
         String actualTitle = driver.getTitle();
-        Assert.assertFalse(actualTitle.contains(unexpectedWordRest)); // False yani icermiyorsa
+
+        // actualTitle.contains(unexpectedWordRest); // Bu kelime Title'da olmadigi icin false doner.
+        Assert.assertFalse(actualTitle.contains(unexpectedWordRest));
+        // Icermedigini aradigimiz icin "ASSERTFALSE" yazdik.
+
+        // title'in Best icerdigi kelimeyi test edin.
+        String istenenKelime = "Best"; // Icerdigi kelimeyi test ettigimiz icin "ASSERTTRUE" yazdik.
+        Assert.assertTrue(actualTitle.contains(istenenKelime));
+        System.out.println("test sonuna kadar calisti");
+        // Assert failed oldugunda Kodun calismasini durdurur
 
         // c. logoTest => BestBuy logosunun görüntülendigini test edin
+
+        WebElement logo=driver.findElement(By.xpath("(// img[@class='logo'])[1]"));
+        Assert.assertTrue(logo.isDisplayed());
+
+        //FrancaisLinkTest => Fransizca Linkin görüntülendiğini test edin
+        WebElement fransizcaLinki=driver.findElement(By.xpath("// button[@lang='fr']"));
+        Assert.assertTrue(fransizcaLinki.isDisplayed());
+
 
     }
 
